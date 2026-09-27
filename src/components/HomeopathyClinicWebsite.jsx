@@ -56,7 +56,7 @@ const FAQS = [
   { q: "What should I bring to the first appointment?", a: "Any prior diagnostic reports, a list of current medication, and — most usefully — a clear, honest account of your history. The first consultation runs 45–60 minutes for exactly this reason." },
 ];
 
-const TIME_SLOTS = ["09:00 AM", "09:45 AM", "10:30 AM", "11:15 AM", "02:00 PM", "02:45 PM", "03:30 PM", "04:15 PM", "05:00 PM"];
+const TIME_SLOTS = ["10:00 AM", "10:30 AM", "10:30 AM", "11:00 AM","11:30 AM", "02:00 PM", "02:30 PM", "03:00 PM", "03:30 PM", "05:00 PM"];
 
 /* ---------------------------------------------------------
    SMALL UTIL: build next 14 available weekdays
