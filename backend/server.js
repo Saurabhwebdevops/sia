@@ -1,3 +1,4 @@
+```js
 require("dotenv").config();
 
 const express = require("express");
@@ -15,7 +16,10 @@ app.use(
     origin: [
       "http://localhost:3000",
       "http://localhost:5173",
+      "https://your-vercel-domain.vercel.app"
     ],
+    methods: ["GET", "POST", "OPTIONS"],
+    credentials: true
   })
 );
 
@@ -29,8 +33,8 @@ const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: process.env.GMAIL_USER,
-    pass: process.env.GMAIL_APP_PASSWORD,
-  },
+    pass: process.env.GMAIL_APP_PASSWORD
+  }
 });
 
 /* =========================================
@@ -46,7 +50,7 @@ app.post("/api/bookings", async (req, res) => {
       concern,
       date,
       time,
-      notes,
+      notes
     } = req.body;
 
     /* =========================================
@@ -56,7 +60,7 @@ app.post("/api/bookings", async (req, res) => {
     if (!name || !phone || !concern || !date || !time) {
       return res.status(400).json({
         success: false,
-        message: "Please fill all required fields.",
+        message: "Please fill all required fields."
       });
     }
 
@@ -71,7 +75,7 @@ app.post("/api/bookings", async (req, res) => {
         day: "numeric",
         month: "long",
         year: "numeric",
-        timeZone: "Asia/Kolkata",
+        timeZone: "Asia/Kolkata"
       }
     );
 
@@ -133,7 +137,7 @@ app.post("/api/bookings", async (req, res) => {
           </p>
 
         </div>
-      `,
+      `
     });
 
     /* =========================================
@@ -208,7 +212,7 @@ app.post("/api/bookings", async (req, res) => {
             </p>
 
           </div>
-        `,
+        `
       });
     }
 
@@ -218,17 +222,16 @@ app.post("/api/bookings", async (req, res) => {
 
     return res.status(200).json({
       success: true,
-      message: "Booking submitted successfully.",
+      message: "Booking submitted successfully."
     });
 
   } catch (error) {
 
-    console.error("Gmail booking error:");
-    console.error(error);
+    console.error("Gmail booking error:", error);
 
     return res.status(500).json({
       success: false,
-      message: "Unable to send booking confirmation.",
+      message: "Unable to send booking confirmation."
     });
   }
 });
@@ -240,13 +243,13 @@ app.post("/api/bookings", async (req, res) => {
 app.get("/", (req, res) => {
   res.json({
     success: true,
-    message: "Sia Homoeo Clinic booking API is running",
+    message: "Sia Homoeo Clinic booking API is running"
   });
 });
 
 /* =========================================
-   SERVER
+   VERCEL EXPORT
 ========================================= */
 
 module.exports = app;
-});
+```
