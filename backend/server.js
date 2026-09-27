@@ -248,10 +248,5 @@ app.get("/", (req, res) => {
    SERVER
 ========================================= */
 
-const PORT = process.env.PORT || 4000;
-
-app.listen(PORT, () => {
-  console.log(
-    `Sia Homoeo Clinic API running on port ${PORT}`
-  );
+module.exports = app;
 });
