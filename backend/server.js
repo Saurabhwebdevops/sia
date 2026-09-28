@@ -84,7 +84,7 @@ app.post("/api/bookings", async (req, res) => {
     ========================================= */
 
     await transporter.sendMail({
-      from: `"Sia Homoeo Clinic" <${process.env.GMAIL_USER}>`,
+  from: `"Sia Homoeo Clinic" <${process.env.GMAIL_USER}>`,
       to: process.env.ADMIN_EMAIL,
       subject: `New Consultation Booking - ${name}`,
 
