@@ -2,7 +2,7 @@
   position: fixed;
     bottom: 20px;
     background: #fff;
-    right: 5px;
+    right: 6px;
     border-radius: 35px;  
    animation: bounce 1s ease infinite;
 }
