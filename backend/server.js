@@ -1,4 +1,3 @@
-```js
 require("dotenv").config();
 
 const express = require("express");
@@ -16,7 +15,7 @@ app.use(
     origin: [
       "http://localhost:3000",
       "http://localhost:5173",
-      "https://your-vercel-domain.vercel.app"
+      "https://sia-9rgb.vercel.app/"
     ],
     methods: ["GET", "POST", "OPTIONS"],
     credentials: true
@@ -252,4 +251,4 @@ app.get("/", (req, res) => {
 ========================================= */
 
 module.exports = app;
-```
+
